@@ -27,13 +27,6 @@ kr = 1 / (C * inv(B*K - A) * B);
 p_obs = [-2+2i, -2-2i];
 L = place(A', C', p_obs)';
 
-% =========================================================================
-% MATLAB Simulation (Mathematical Equivalent of Simulink)
-% =========================================================================
-% Let augmented state X = [x; x_hat]
-% dx/dt = Ax - BK*x_hat + B*kr*r
-% dx_hat/dt = LCx + (A - LC - BK)*x_hat + B*kr*r
-
 A_cl = [A,           -B*K;
     L*C,  A - L*C - B*K];
 B_cl = [B*kr; 
